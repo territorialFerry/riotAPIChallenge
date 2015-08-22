@@ -14,5 +14,8 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/vokoshyv/riotAPIChallenge/issues"
+  },
+  "devDependencies": {
+    "fs": "0.0.2"
   }
 }
