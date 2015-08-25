@@ -18,5 +18,8 @@
   "devDependencies": {
     "fs": "0.0.2",
     "request": "~2.61.0"
+  },
+  "dependencies": {
+    "express": "~4.13.3"
   }
 }
