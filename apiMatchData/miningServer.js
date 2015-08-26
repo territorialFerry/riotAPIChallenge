@@ -1,5 +1,5 @@
 var queryForMatches = require('./miningHelpers');
 
-queryForMatches('na', 'BEFORE', 'first');
+queryForMatches('na', 'BEFORE', 'test');
 
 
