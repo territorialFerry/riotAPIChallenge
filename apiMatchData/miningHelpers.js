@@ -12,7 +12,7 @@ var queryForMatches = function(region, timePeriod, chunkSelection){
   // console.log("AFTER: ", rankedAfterPatchNA[100]);
 
   var chunks = {
-    'test': [0, 10], 
+    'test': [0, 1], 
     'first': [0, 2500],
     'seconed': [2500, 5000], 
     'third': [5000, 7500], 
