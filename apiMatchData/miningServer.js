@@ -1,6 +1,5 @@
-var apiKey = require('../APIKEY/apiKey');
 var queryForMatches = require('./miningHelpers');
 
-queryForMatches();
+queryForMatches('na', 'BEFORE', 'first');
 
 
