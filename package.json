@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "express": "~4.13.3",
-    "node-mysql": "~0.4.2",
-    "mysql": "~2.9.0"
+    "mysql": "~2.9.0",
+    "sequelize": "~3.6.0",
+    "node-mysql": "~0.4.2"
   }
 }
