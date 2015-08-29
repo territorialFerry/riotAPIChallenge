@@ -1,18 +1,17 @@
 var fs = require('fs');
 var request = require('request');
 var apiKey = require('../APIKEY/apiKey');
-var rankedBeforePatchNA = require('../AP_ITEM_DATASET/5.11/RANKED_SOLO/NA');
-var rankedAfterPatchNA = require('../AP_ITEM_DATASET/5.14/RANKED_SOLO/NA');
 
 
 
-var queryForMatches = function(region, timePeriod, chunkSelection){
+var queryForMatches = function(region, timePeriod, matchRange, dataSet){
 
   // console.log("BEFORE: ", rankedBeforePatchNA[100]);
   // console.log("AFTER: ", rankedAfterPatchNA[100]);
 
   var chunks = {
     'test': [0, 1], 
+    'largerTest': [0, 10], 
     'first': [0, 2500],
     'seconed': [2500, 5000], 
     'third': [5000, 7500], 
@@ -21,14 +20,18 @@ var queryForMatches = function(region, timePeriod, chunkSelection){
 
   var apiURL;
 
-  for (var i = chunks[chunkSelection][0]; i < chunks[chunkSelection][1]; i++){
-    apiURL = 'https://na.api.pvp.net/api/lol/' + region + '/v2.2/match/' + rankedBeforePatchNA[i] + '?api_key=' + apiKey['key'];
+  for (var i = chunks[matchRange][0]; i < chunks[matchRange][1]; i++){
+    apiURL = 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + dataSet[i] + '?api_key=' + apiKey['key'];
     request(apiURL, function (error, response, body) {
       if (!error && response.statusCode == 200) {
+        
+        // this code used to be used in order to simply write the data to a text file. 
+        // will now insert it directly into a mysql database
         fs.appendFile('apiMatchData/matchData/rankedBeforePatchNA.json', 'ZBREAKZ' + body, function(err){
           if (err) throw err;
-          // console.log('the test data has been written');
+          console.log('the test data has been written');
         })
+
       }
     })
     
