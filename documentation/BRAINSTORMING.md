@@ -16,10 +16,11 @@
 
 #### Column names
 * CHAMP_ID
+* CHAMP_NAME
 * TITLE
 * TOTAL_GAMES_PLAYED
 * TOTAL_GAMES_WON
-* Blasting Wand Usage (1026) - ITME_1026
+* Blasting Wand Usage (1026) - ITEM_1026
 * Needlessly Large Rod Usage (1058) - ITEM_1058
 * Rabadon's Deathcap Usage (3089) - ITEM_3089
 * Zhonya's Hourglass Usage (3157) - ITEM_3157
@@ -35,3 +36,45 @@
 * Will of the Ancients Usage (3152) - ITEM_3152
 * Morellonomicon Usage (3165) - ITEM_3165
 * Athene's Unholy Grail Usage (3174) - ITEM_3174
+
+create table "tablename"
+("column1" "data type" 
+         [constraint],
+ "column2" "data type" 
+         [constraint],
+ "column3" "data type" 
+        [constraint]);
+ [ ] = optional
+
+create table AFTER_PATCH
+(CHAMP_ID varchar(10), 
+CHAMP_NAME varchar(20), 
+TITLE varchar(100), 
+TOTAL_GAMES_PLAYED varchar(10),
+TOTAL_GAMES_WON varchar(10),
+ITEM_1026 varchar(10), 
+ITEM_1058 varchar(10), 
+ITEM_3089 varchar(10), 
+ITEM_3157 varchar(10), 
+ITEM_3285 varchar(10), 
+ITEM_3116 varchar(10), 
+ITEM_3003 varchar(10), 
+ITEM_3040 varchar(10), 
+ITEM_3027 varchar(10), 
+ITEM_3136 varchar(10), 
+ITEM_3151 varchar(10), 
+ITEM_3135 varchar(10),
+ITEM_3115 varchar(10), 
+ITEM_3152 varchar(10), 
+ITEM_3165 varchar(10),
+ITEM_3174 varchar(10))
+
+#### DATA THAT IS NEEDED FROM API CALL 'participants' key
+* championId (num)
+* winner (boolean)
+* item0 (num)
+* item1 (num)
+* item2 (num)
+* item3 (num)
+* item4 (num)
+* item5 (num)
