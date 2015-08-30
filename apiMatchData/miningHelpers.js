@@ -79,37 +79,39 @@ var queryForMatches = function(region, timePeriod, matchRange, dataSet, database
   var apiURL;
   var queryString;
   var items;
+  var champInsertion = 1;
 
   for (var i = chunks[matchRange][0]; i < chunks[matchRange][1]; i++){
     apiURL = 'https://' + region + '.api.pvp.net/api/lol/' + region + '/v2.2/match/' + dataSet[i] + '?api_key=' + apiKey['key'];
     request(apiURL, function (error, response, body) {
       if (!error && response.statusCode == 200) {
         JSON.parse(response.body)['participants'].forEach(function(participant){
-          console.log('----------------------------');
-          console.log(participant['championId']);
-          console.log(participant['stats']['winner']);
-          console.log(participant['stats']['item0']);
-          console.log(participant['stats']['item1']);
-          console.log(participant['stats']['item2']);
-          console.log(participant['stats']['item3']);
-          console.log(participant['stats']['item4']);
-          console.log(participant['stats']['item5']);
-          console.log('----------------------------');
+          // console.log('----------------------------');
+          // console.log(participant['championId']);
+          // console.log(participant['stats']['winner']);
+          // console.log(participant['stats']['item0']);
+          // console.log(participant['stats']['item1']);
+          // console.log(participant['stats']['item2']);
+          // console.log(participant['stats']['item3']);
+          // console.log(participant['stats']['item4']);
+          // console.log(participant['stats']['item5']);
+          // console.log('----------------------------');
           items = [];
-          for (var i = 0; i < 6; i++){
-            items.push(participant['stats']['item' + i.toString()]);
+          for (var j = 0; j < 6; j++){
+            items.push(participant['stats']['item' + j.toString()]);
           }
           items = items.filter(function(item){return relevantItems[item]});
-          console.log(items);
+          // console.log(items);
 
           queryString = makeQueryForUpdate(timePeriod, participant['championId'], participant['stats']['winner'], items);
 
-          console.log(queryString);
+          // console.log(queryString);
 
           database.query(queryString, function(err, rows, fields) {
+
             if (err) throw err;
            
-            console.log('The test data has been inserted');
+            console.log('Match inserted: ', champInsertion++);
           });
 
           
