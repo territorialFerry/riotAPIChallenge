@@ -4,7 +4,7 @@ var apiKey = require('../APIKEY/apiKey');
 
 
 
-var queryForMatches = function(region, timePeriod, matchRange, dataSet){
+var queryForMatches = function(region, timePeriod, matchRange, dataSet, database){
 
   // console.log("BEFORE: ", rankedBeforePatchNA[100]);
   // console.log("AFTER: ", rankedAfterPatchNA[100]);
