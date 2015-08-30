@@ -27,10 +27,10 @@ var queryForMatches = function(region, timePeriod, matchRange, dataSet){
         
         // this code used to be used in order to simply write the data to a text file. 
         // will now insert it directly into a mysql database
-        fs.appendFile('apiMatchData/matchData/rankedBeforePatchNA.json', 'ZBREAKZ' + body, function(err){
-          if (err) throw err;
-          console.log('the test data has been written');
-        })
+        // fs.appendFile('apiMatchData/matchData/rankedBeforePatchNA.json', 'ZBREAKZ' + body, function(err){
+        //   if (err) throw err;
+        //   console.log('the test data has been written');
+        // })
 
       }
     })
