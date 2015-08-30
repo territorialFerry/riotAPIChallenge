@@ -13,7 +13,7 @@ var database = require('./database/db');
 // NA RANKED DATA BEFORE PATCH
 // queryForMatches('na', 'BEFORE', 'first', rankedBeforePatchNA, database);
 // queryForMatches('na', 'BEFORE', 'second', rankedBeforePatchNA, database);
-// queryForMatches('na', 'BEFORE', 'third', rankedBeforePatchNA, database);
+queryForMatches('na', 'BEFORE', 'third', rankedBeforePatchNA, database);
 // queryForMatches('na', 'BEFORE', 'fourth', rankedBeforePatchNA, database);
 
 // NA RANKED DATA AFTER PATCH
