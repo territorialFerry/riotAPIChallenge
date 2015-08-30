@@ -68,3 +68,13 @@ ITEM_3115 varchar(10),
 ITEM_3152 varchar(10), 
 ITEM_3165 varchar(10),
 ITEM_3174 varchar(10))
+
+#### DATA THAT IS NEEDED FROM API CALL 'participants' key
+* championId (num)
+* winner (boolean)
+* item0 (num)
+* item1 (num)
+* item2 (num)
+* item3 (num)
+* item4 (num)
+* item5 (num)
