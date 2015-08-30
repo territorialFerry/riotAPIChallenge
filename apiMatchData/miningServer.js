@@ -10,6 +10,6 @@ var rankedAfterPatchKR = require('../AP_ITEM_DATASET/5.14/RANKED_SOLO/KR');
 // bring in the mysql database
 var database = require('./database/db');
 
-queryForMatches('na', 'BEFORE', 'largerTest', rankedBeforePatchNA, database);
+queryForMatches('na', 'BEFORE', 'test', rankedBeforePatchNA, database);
 
 
