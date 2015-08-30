@@ -8,7 +8,8 @@ var rankedBeforePatchKR = require('../AP_ITEM_DATASET/5.11/RANKED_SOLO/KR');
 var rankedAfterPatchKR = require('../AP_ITEM_DATASET/5.14/RANKED_SOLO/KR');
 
 // bring in the mysql database
+var database = require('./database/db');
 
-queryForMatches('euw', 'BEFORE', 'test', rankedBeforePatchEUW);
+queryForMatches('na', 'BEFORE', 'test', rankedBeforePatchNA);
 
 
