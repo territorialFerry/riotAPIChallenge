@@ -14,7 +14,7 @@ var database = require('./database/db');
 // queryForMatches('na', 'BEFORE', 'first', rankedBeforePatchNA, database);
 // queryForMatches('na', 'BEFORE', 'second', rankedBeforePatchNA, database);
 // queryForMatches('na', 'BEFORE', 'third', rankedBeforePatchNA, database);
-queryForMatches('na', 'BEFORE', 'fourth', rankedBeforePatchNA, database);
+// queryForMatches('na', 'BEFORE', 'fourth', rankedBeforePatchNA, database);
 
 // NA RANKED DATA AFTER PATCH
 // queryForMatches('na', 'AFTER', 'first', rankedBeforePatchNA, database);
@@ -32,7 +32,7 @@ queryForMatches('na', 'BEFORE', 'fourth', rankedBeforePatchNA, database);
 // queryForMatches('euw', 'AFTER', 'first', rankedBeforePatchEUW, database);
 // queryForMatches('euw', 'AFTER', 'second', rankedBeforePatchEUW, database);
 // queryForMatches('euw', 'AFTER', 'third', rankedBeforePatchEUW, database);
-// queryForMatches('euw', 'AFTER', 'fourth', rankedBeforePatchEUW, database);
+queryForMatches('euw', 'AFTER', 'fourth', rankedBeforePatchEUW, database);
 
 // KR RANKED DATA BEFORE PATCH
 // queryForMatches('kr', 'BEFORE', 'first', rankedBeforePatchKR, database);

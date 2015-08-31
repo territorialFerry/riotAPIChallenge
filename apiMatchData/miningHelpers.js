@@ -52,7 +52,7 @@ var queryForMatches = function(region, timePeriod, matchRange, dataSet, database
     'largerTest': [0, 10], 
     'evenLargerTest': [0, 100], 
     'first': [0, 2500],
-    'seconed': [2500, 5000], 
+    'second': [2500, 5000], 
     'third': [5000, 7500], 
     'fourth': [7500, 10000]
   }
