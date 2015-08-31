@@ -58,11 +58,12 @@ var interact = {
     database.query(queryStringBefore, function(err, rows, field){
       if (err) throw err;
 
-      var championData = {'before': rows};
+      var championData = {'before': rows[0]};
       database.query(queryStringAfter, function(err, rows, field){
         if (err) throw err;
-        championData['after'] = rows;
-        res.send(championData);
+        championData['after'] = rows[0];
+        console.log(championData);
+        res.render('champion', {forTemplate: championData});
       })
     })
   }, 
