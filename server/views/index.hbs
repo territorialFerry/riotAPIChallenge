@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Effects of AP Item Changes</title>
+</head>
+<body>
+
+  <h1>Effects of AP Item Changes</h1>
+  {{#each champions as |Champion|}}
+  <div>
+    <a href="/{{Champion.CHAMP_NAME}}"><img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/{{Champion.forImage}}.png" alt="Image not found" onError="this.onerror=null;this.src='http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/588.png';"></a>
+    <!-- <img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/RekSai.png" alt=""> -->
+    <!-- <img src="{{Champion.Championname}}_sm.jpg" alt=""> -->
+    <a href="/{{Champion.CHAMP_NAME}}">{{Champion.CHAMP_NAME}}</a>
+    {{/each}}
+  </div>
+
+</body>
+</html>
