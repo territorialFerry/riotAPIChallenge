@@ -51,8 +51,20 @@ var interact = {
     })
   }, 
 
-  champSelect: function(req, res, next){
-    
+  champSelect: function(req, res, next, champion){
+    var queryStringBefore = 'SELECT * FROM BEFORE_PATCH WHERE CHAMP_NAME = "' + champion + '";';
+    var queryStringAfter = 'SELECT * FROM AFTER_PATCH WHERE CHAMP_NAME = "' + champion + '";';
+
+    database.query(queryStringBefore, function(err, rows, field){
+      if (err) throw err;
+
+      var championData = {'before': rows};
+      database.query(queryStringAfter, function(err, rows, field){
+        if (err) throw err;
+        championData['after'] = rows;
+        res.send(championData);
+      })
+    })
   }, 
 
   test: function(req, res, next){
