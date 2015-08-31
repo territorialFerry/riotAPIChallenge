@@ -24,8 +24,7 @@ app.get('/test', function(req, res, next){
 
 app.get('/:champion', function(req, res, next){
   var champion = req.params.champion;
-  res.send(champion);
-  // next();
+  databaseFunc.champSelect(req, res, next, champion);
 });
 
 var server = app.listen(3000, function(){
