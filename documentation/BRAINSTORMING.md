@@ -78,3 +78,11 @@ ITEM_3174 varchar(10))
 * item3 (num)
 * item4 (num)
 * item5 (num)
+
+#### DATA THAT WILL BE EXTRAPOLATED FOR EACH CHAMPION
+* Win percentage before patch
+* Win percentage after patch
+* Change in win percentage
+* Item usage per match before patch
+* Item usage per match after patch
+* Change in item usage
