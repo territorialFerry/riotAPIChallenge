@@ -63,6 +63,60 @@ var interact = {
         if (err) throw err;
         championData['after'] = rows[0];
         console.log(championData);
+
+        // Win percentages before and after along with a comparison
+        var winPercentageBefore = Math.round(championData.before.TOTAL_GAMES_WON / championData.before.TOTAL_GAMES_PLAYED * 1000) / 10;
+        var winPercentageAfter = Math.round(championData.after.TOTAL_GAMES_WON / championData.after.TOTAL_GAMES_PLAYED * 1000) / 10;
+        var winPercentageChange = (winPercentageBefore < winPercentageAfter)? 'increase' : (winPercentageBefore === winPercentageAfter)? 'same' : 'decrease';
+
+        console.log("WIN PERCENTAGE BEFORE: ", winPercentageBefore);
+        console.log("WIN PERCENTAGE AFTER: ", winPercentageAfter);
+        console.log("WIN PERCENTAGE CHANGE: ", winPercentageChange);
+
+        // getting item usage percentages
+        var items = {
+          1026: 'Blasting Wand', 
+          1058: 'Needlessly Large Rod', 
+          3089: "Rabadon's Deathcap", 
+          3157: "Zhonya's Hourglass", 
+          3285: "Luden's Echo", 
+          3116: "Rylai's Crystal Scepter", 
+          3003: "Archangel's Staff", 
+          3040: "Seraph's Embrace", 
+          3027: "Rod of Ages", 
+          3136: "Haunting Guise", 
+          3151: "Liandry's Torment", 
+          3135: "Void Staff", 
+          3115: "Nashor's Tooth", 
+          3152: "Will of the Ancients", 
+          3165: "Morellonomicon", 
+          3174: "Athene's Unholy Grail"
+        }
+
+        var itemPercentageChange = [];
+
+        for (var key in championData.before){
+          if (key.split('ITEM_').length === 2){
+            var work = [];
+            work.push(key.split('ITEM_')[1]);
+            work.push(items[key.split('ITEM_')[1]]);
+            work.push(Math.round(championData.before[key] / championData.before.TOTAL_GAMES_PLAYED * 1000) / 10);
+            work.push(Math.round(championData.after[key] / championData.after.TOTAL_GAMES_PLAYED * 1000) / 10);
+            itemPercentageChange.push(work);
+          }
+        }
+
+        console.log("ZE ITEMS: ", itemPercentageChange);
+
+        championData['CHAMP_NAME'] = championData.before.CHAMP_NAME;
+        championData['winPercentageBefore'] = winPercentageBefore;
+        championData['winPercentageAfter'] = winPercentageAfter;
+        championData['winPercentageChange'] = winPercentageChange;
+        championData['itemPercentageChange'] = itemPercentageChange;
+
+
+
+
         res.render('champion', {forTemplate: championData});
       })
     })
