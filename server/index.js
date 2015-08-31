@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var _ = require('lodash');
 
 app.get('/', function(req, res, next){
   res.send('why hello there');
