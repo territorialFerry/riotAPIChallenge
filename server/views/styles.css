@@ -1,0 +1,11 @@
+.front-page {
+  display: block;
+}
+
+.each-box {
+    padding: 50px;
+}
+
+img {
+  width: 100%;
+}
