@@ -98,10 +98,10 @@ var interact = {
         for (var key in championData.before){
           if (key.split('ITEM_').length === 2){
             var work = [];
-            work.push(key.split('ITEM_')[1]);
-            work.push(items[key.split('ITEM_')[1]]);
-            work.push(Math.round(championData.before[key] / championData.before.TOTAL_GAMES_PLAYED * 1000) / 10);
-            work.push(Math.round(championData.after[key] / championData.after.TOTAL_GAMES_PLAYED * 1000) / 10);
+            work['itemCode'] = (key.split('ITEM_')[1]);
+            work['itemName'] = (items[key.split('ITEM_')[1]]);
+            work['itemPerBefore'] = (Math.round(championData.before[key] / championData.before.TOTAL_GAMES_PLAYED * 1000) / 10);
+            work['itemPerAfter'] = (Math.round(championData.after[key] / championData.after.TOTAL_GAMES_PLAYED * 1000) / 10);
             itemPercentageChange.push(work);
           }
         }
@@ -114,6 +114,28 @@ var interact = {
         championData['winPercentageChange'] = winPercentageChange;
         championData['itemPercentageChange'] = itemPercentageChange;
 
+        var correctImageName = {
+          'ChoGath': 'Chogath', 
+          'Fiddlesticks': 'FiddleSticks', 
+          'KhaZix': 'Khazix', 
+          'LeBlanc': 'Leblanc', 
+          'VelKoz': 'Velkoz'
+        }
+
+        var champNameToModify = championData.before.CHAMP_NAME;
+        var work = '';
+        for (var i = 0; i < champNameToModify.length; i++){
+          if (" '.".indexOf(champNameToModify[i]) === -1){
+            work+= champNameToModify[i];
+          }
+        }
+        if (correctImageName[work] !== undefined){
+          work = correctImageName[work]; 
+        }
+
+        championData['imgURL'] = work;
+
+        console.log("CHAMPION IMG URL", work);
 
 
 
