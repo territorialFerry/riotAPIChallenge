@@ -1,8 +1,4 @@
-# riotAPIChallenge
-
-##### Prompt: Given two data sets of match IDs, one before the AP Item changes and another one after, create a piece of software to demonstrate changes in AP Item usage. 
-
-# Effects of AP Item Changes #
+# [Effects of AP Item Changes](http://vokoshyv.com/apchangeeffects) #
 
 ## Use data to find what items now make you a better player ##
 
