@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <title>Champion Page</title>
 </head>
 <body>
@@ -24,8 +25,8 @@
       <tr>
         <td><img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{{item.itemCode}}.png" alt="Image not found" onError="this.onerror=null;this.src='http://pm1.narvii.com/5815/73e78d695725e8344a38c523c885fa6aca2c737b_hq.jpg';"></td>
         <td>{{item.itemName}}</td>
-        <td>{{item.itemPerBefore}}</td>
-        <td>{{item.itemPerAfter}}</td>
+        <td>{{item.itemPerBefore}}%</td>
+        <td>{{item.itemPerAfter}}%</td>
       </tr>
     {{/each}}
     </table>
