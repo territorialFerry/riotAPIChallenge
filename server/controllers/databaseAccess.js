@@ -100,8 +100,8 @@ var interact = {
             var work = [];
             work['itemCode'] = (key.split('ITEM_')[1]);
             work['itemName'] = (items[key.split('ITEM_')[1]]);
-            work['itemPerBefore'] = (Math.round(championData.before[key] / championData.before.TOTAL_GAMES_PLAYED * 1000) / 10);
-            work['itemPerAfter'] = (Math.round(championData.after[key] / championData.after.TOTAL_GAMES_PLAYED * 1000) / 10);
+            work['itemPerBefore'] = (Math.round(championData.before[key] / championData.before.TOTAL_GAMES_PLAYED * 10000) / 100);
+            work['itemPerAfter'] = (Math.round(championData.after[key] / championData.after.TOTAL_GAMES_PLAYED * 10000) / 100);
             itemPercentageChange.push(work);
           }
         }
