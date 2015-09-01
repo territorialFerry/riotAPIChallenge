@@ -22,7 +22,7 @@ app.get('/test', function(req, res, next){
   databaseFunc.test(req, res, next);
 })
 
-app.get('/:champion', function(req, res, next){
+app.get('/champ/:champion', function(req, res, next){
   var champion = req.params.champion;
   databaseFunc.champSelect(req, res, next, champion);
 });
