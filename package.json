@@ -26,6 +26,7 @@
     "node-mysql": "~0.4.2",
     "lodash": "~3.10.1",
     "consolidate": "~0.13.1",
-    "handlebars": "~3.0.3"
+    "handlebars": "~3.0.3",
+    "http": "0.0.0"
   }
 }
