@@ -55,14 +55,16 @@ var interact = {
     var queryStringBefore = 'SELECT * FROM BEFORE_PATCH WHERE CHAMP_NAME = "' + champion + '";';
     var queryStringAfter = 'SELECT * FROM AFTER_PATCH WHERE CHAMP_NAME = "' + champion + '";';
 
+    var championData = {};
+
     database.query(queryStringBefore, function(err, rows, field){
       if (err) throw err;
 
-      var championData = {'before': rows[0]};
+      championData['before'] = rows[0];
+      console.log(rows);
       database.query(queryStringAfter, function(err, rows, field){
         if (err) throw err;
         championData['after'] = rows[0];
-        console.log(championData);
 
         // Win percentages before and after along with a comparison
         var winPercentageBefore = Math.round(championData.before.TOTAL_GAMES_WON / championData.before.TOTAL_GAMES_PLAYED * 1000) / 10;
