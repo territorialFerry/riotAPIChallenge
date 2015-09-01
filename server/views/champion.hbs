@@ -7,10 +7,29 @@
 <body>
 
   <h1>{{forTemplate.CHAMP_NAME}} Data</h1>
-  <h1>{{forTemplate.winPercentageBefore}} Data</h1>
-  <h1>{{forTemplate.winPercentageAfter}} Data</h1>
-  <h1>{{forTemplate.winPercentageChange}} Data</h1>
-  <h1>{{forTemplate.itemPercentageChange}} Data</h1>
+  <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{forTemplate.imgURL}}_0.jpg" alt="Image not found" onError="this.onerror=null;this.src='https://na.merch.riotgames.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/l/plush_poro_1.png';">
+  <h1>Win Percentage Before Patch: {{forTemplate.winPercentageBefore}}</h1>
+  <h1>Win Percentage After Patch: {{forTemplate.winPercentageAfter}}</h1>
+  <h1>Win Percentage Change: {{forTemplate.winPercentageChange}}</h1>
+  
+  <div>
+    <table>
+      <tr>
+        <th>     </th>
+        <th>Item</th>
+        <th>Usage Percentage Before Patch</th>
+        <th>Usage Percentage After Patch</th>
+      </tr>
+  {{#each forTemplate.itemPercentageChange as |item|}}
+      <tr>
+        <td><img src="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/{{item.itemCode}}.png" alt="Image not found" onError="this.onerror=null;this.src='http://pm1.narvii.com/5815/73e78d695725e8344a38c523c885fa6aca2c737b_hq.jpg';"></td>
+        <td>{{item.itemName}}</td>
+        <td>{{item.itemPerBefore}}</td>
+        <td>{{item.itemPerAfter}}</td>
+      </tr>
+    {{/each}}
+    </table>
+  </div>
 
 </body>
 </html>
