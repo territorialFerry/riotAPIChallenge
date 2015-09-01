@@ -16,7 +16,7 @@ app.engine('hbs', engines.handlebars);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
 
-app.get('/', function(req, res, next){
+app.get('/apchangeeffects', function(req, res, next){
   databaseFunc.initial(req, res, next);
 })
 
@@ -35,6 +35,6 @@ app.get('/champ/:champion', function(req, res, next){
 
 server.listen(8080,'127.0.0.1',function(){
  server.close(function(){
-   server.listen(8001,'192.241.238.234')
+   server.listen(8080,'192.241.238.234')
  })
 })
